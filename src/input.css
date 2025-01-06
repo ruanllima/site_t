@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.teste{
+    @apply text-3xl font-bold underline text-blue-600
+}
+
+.align_text_full{
+    @apply flex justify-center items-center
+}
+
+.align_div_full{
+    display: 'flex';
+    justify-content: center;
+    align-items: center;
+    height: screen;
+    width: screen;
+
+}
+
+.logo{
+    image-ur: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Download-Icon.png'
+}
