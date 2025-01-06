@@ -3,8 +3,12 @@ if (isset($_POST['submit'])) {
 
    // print_r($_POST['email']);
     //print_r($_POST['password']);
+
+    include_once('config.php');
+
     $email = $_POST['email'];
     $password = $_POST['password'];
+  //
 }
 ?>
 
