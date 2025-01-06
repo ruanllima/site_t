@@ -1,16 +1,4 @@
-<?php
-if (isset($_POST['submit'])) {
 
-   // print_r($_POST['email']);
-    //print_r($_POST['password']);
-
-    include_once('config.php');
-
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-  //
-}
-?>
 
 
 <!DOCTYPE html>
@@ -30,7 +18,7 @@ if (isset($_POST['submit'])) {
         </div>
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form class="space-y-6" action="index.php" method="POST">
+            <form class="space-y-6" action="login.php" method="POST">
                 <div>
                     <label for="login" class="block text-sm/6 font-medium text-white p-1">Email</label>
                     <div>
