@@ -1,10 +1,11 @@
 <?php
+session_start(); // Inicia a sessão
+
 // Inclui o arquivo de configuração da conexão com o banco
 include('config.php');
 
 // Verifica se o formulário foi enviado
 if (isset($_POST['submit'])) {
-
     // Obtém os dados do formulário
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -31,13 +32,18 @@ if (isset($_POST['submit'])) {
 
             // Compara a senha digitada com a senha armazenada no banco
             if ($user['login_password'] === $password) {
-                echo "Login bem-sucedido!";
-                // Aqui você pode redirecionar para a área restrita do seu site
+                // Redirecionar para uma página protegida (exemplo: dashboard.php)
+                header("Location: dashboard.html");
+                exit();
             } else {
-                echo "Senha incorreta!";
+                $_SESSION['error'] = "Senha incorreta.";
+                header("Location: index.php"); // Redireciona para a página principal
+                exit();
             }
         } else {
-            echo "Usuário não encontrado!";
+            $_SESSION['error'] = "Usuário não encontrado.";
+            header("Location: index.php"); // Redireciona para a página principal
+            exit();
         }
 
         // Fecha a consulta
