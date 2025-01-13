@@ -59,9 +59,16 @@ unset($_SESSION['error']);
                     <div>
                         <input type="password" name="password" autocomplete="current-password" required class="block w-full rounded-xl bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                     </div><br>
-                    <div class="text-sm">
-                        <a href="#" class="font-semibold text-indigo-900 hover:text-indigo-800">Forgot password?</a>
+                    <div class="inline-grid grid-cols-3 gap-5 justify-items-end">
+                        <div class="text-sm">
+                            <a href="#" class="font-semibold text-indigo-700 hover:text-indigo-600">Forgot password?</a>
+                        </div>
+                        <div><h1></h1></div>
+                        <div class="text-sm">
+                            <a href="./create.html" class="font-semibold text-indigo-700 hover:text-indigo-600">Create account</a>
+                        </div>
                     </div>
+                        
                 </div>
 
                 <div>
