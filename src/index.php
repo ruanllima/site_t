@@ -1,7 +1,8 @@
 <?php
 session_start();
 $error = isset($_SESSION['error']) ? $_SESSION['error'] : null;
-unset($_SESSION['error']); // Limpa a mensagem após exibi-la
+unset($_SESSION['error']);
+
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +12,7 @@ unset($_SESSION['error']); // Limpa a mensagem após exibi-la
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruan Lima</title>
     <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="h-full">
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
@@ -19,21 +21,29 @@ unset($_SESSION['error']); // Limpa a mensagem após exibi-la
             <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-white">Sign in your account</h2>
         </div>
 
+        
+
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+
+                <!-- Exibindo erro, se houver -->
+            <?php if ($error): ?>
+                <div id="alert">
+                    <div class="flex items-center bg-yellow-50 border border-yellow-300 rounded-lg p-4 max-w-lg shadow-md">
+                        <!-- Icon -->
+                        <div class="flex-shrink-0 text-yellow-500 mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 15a1.5 1.5 0 11-1.5 1.5A1.5 1.5 0 0112 17zm1-4.5h-2v-5h2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-yellow-800 mb-1">Attention needed</h4>
+                            <h2 class="text-yellow-700 text-sm"><?= htmlspecialchars($error) ?></h2>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
             <form class="space-y-6" action="login.php" method="POST">
                 
-                <!-- Exibindo erro, se houver -->
-                <?php if ($error): ?>
-                    <div id="alert" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
-                        <span><?= htmlspecialchars($error) ?></span>
-                        <button onclick="closeAlert()" class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                            <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                <title>Close</title>
-                                <path d="M14.348 5.652a1 1 0 10-1.414-1.414L10 7.172 7.066 4.238a1 1 0 10-1.414 1.414L8.828 10l-3.176 3.176a1 1 0 101.414 1.414L10 12.828l2.934 2.934a1 1 0 101.414-1.414L11.172 10l3.176-3.176z" />
-                            </svg>
-                        </button>
-                    </div>
-                <?php endif; ?>
 
                 <div>
                     <label for="email" class="block text-sm/6 font-medium text-white p-1">Email</label>
@@ -50,7 +60,7 @@ unset($_SESSION['error']); // Limpa a mensagem após exibi-la
                         <input type="password" name="password" autocomplete="current-password" required class="block w-full rounded-xl bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                     </div><br>
                     <div class="text-sm">
-                        <a href="#" class="font-semibold text-gray-800 hover:text-gray-700">Forgot password?</a>
+                        <a href="#" class="font-semibold text-indigo-900 hover:text-indigo-800">Forgot password?</a>
                     </div>
                 </div>
 

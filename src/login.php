@@ -2,57 +2,36 @@
 session_start(); // Inicia a sessão
 
 // Inclui o arquivo de configuração da conexão com o banco
-include('config.php');
+include 'config.php';
 
-// Verifica se o formulário foi enviado
-if (isset($_POST['submit'])) {
-    // Obtém os dados do formulário
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+function query($query, $conexao){
+    $sql_query = $conexao->query($query);
+    return $sql_query;
+}
 
-    // Preparar a consulta SQL para buscar o usuário pelo e-mail
-    $sql = "SELECT login_email, login_password FROM person WHERE login_email = ?";
-    $stmt = $conexao->prepare($sql);
+$email = $conexao->real_escape_string($_POST['email']);
+$password = $conexao->real_escape_string($_POST['password']);
 
-    // Verifica se a preparação da consulta foi bem-sucedida
-    if ($stmt) {
-        // Liga o parâmetro da consulta ao valor de $email
-        $stmt->bind_param("s", $email);
+$sql_busca_email = query("SELECT * FROM person WHERE login_email = '$email'", $conexao);
 
-        // Executa a consulta
-        $stmt->execute();
+if ($sql_busca_email->num_rows > 0) {
+    echo "Usuário encontrado: " . $email;
 
-        // Obtém o resultado da consulta
-        $result = $stmt->get_result();
 
-        // Verifica se o e-mail foi encontrado
-        if ($result->num_rows > 0) {
-            // O e-mail foi encontrado, agora vamos comparar a senha
-            $user = $result->fetch_assoc();
 
-            // Compara a senha digitada com a senha armazenada no banco
-            if ($user['login_password'] === $password) {
-                // Redirecionar para uma página protegida (exemplo: dashboard.php)
-                header("Location: dashboard.html");
-                exit();
-            } else {
-                $_SESSION['error'] = "Senha incorreta.";
-                header("Location: index.php"); // Redireciona para a página principal
-                exit();
-            }
-        } else {
-            $_SESSION['error'] = "Usuário não encontrado.";
-            header("Location: index.php"); // Redireciona para a página principal
-            exit();
-        }
-
-        // Fecha a consulta
-        $stmt->close();
+    $sql_busca_password = query("SELECT * FROM person WHERE login_email = '$email' AND login_password = '$password'", $conexao);
+    if ($sql_busca_password->num_rows>0) {
+        echo "usuario autenticado";
+        header("Location: dashboard.html");
+    
     } else {
-        echo "Erro ao preparar a consulta!";
+        $_SESSION['error'] = 'Senha incorreta';
+        header("Location: index.php");
     }
+    
 
-    // Fecha a conexão
-    $conexao->close();
+} else {
+    $_SESSION['error'] = "Usuário não encontrado";
+    header("Location: index.php");
 }
 ?>
