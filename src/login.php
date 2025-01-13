@@ -4,17 +4,12 @@ session_start(); // Start the session
 // Include our conection file
 include 'config.php';
 
-// Function to execute prepared statements with parameters (query parameters)
-function query($query, $params, $conn){
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param(...$params);
-    $stmt->execute();
-    return $stmt->get_result();
+if(isset($_POST['submit'])){
+    // Get form data from POST request"
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 }
 
-// Get form data from POST request
-$email = $_POST['email'];
-$password = $_POST['password'];
 
 // Check if user exists in the database by querying the login_email column
 $sql_busca_email = query("SELECT * FROM person WHERE login_email = ?",['s', $email] ,$conn);

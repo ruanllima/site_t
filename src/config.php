@@ -14,4 +14,12 @@ $conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 if ($conn->connect_error) {
     die("Erro na conexão com o banco de dados: " . $conn->connect_error);
 }
+
+// Function to execute prepared statements with parameters (query parameters)
+function query($query, $params, $conn){
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param(...$params);
+    $stmt->execute();
+    return $stmt->get_result();
+}
 ?>
