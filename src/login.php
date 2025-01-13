@@ -11,6 +11,7 @@ if(isset($_POST['submit'])){
 }
 
 
+
 // Check if user exists in the database by querying the login_email column
 $sql_busca_email = query("SELECT * FROM person WHERE login_email = ?",['s', $email] ,$conn);
 
@@ -18,8 +19,11 @@ $sql_busca_email = query("SELECT * FROM person WHERE login_email = ?",['s', $ema
 if ($sql_busca_email->num_rows > 0) {
     echo "Usuário encontrado: " . $email;
 
-    $sql_busca_password = query("SELECT * FROM person WHERE login_email = ? AND login_password = ?", ['ss', $email, $password] ,$conn);
-    if ($sql_busca_password->num_rows>0) {
+
+    $row = $sql_busca_email->fetch_assoc();
+    $stored_password = $row['login_password'];
+    
+    if (password_verify($password, $stored_password)) {
         // Login successful,  redirect to dashboard page
         header("Location: dashboard.html");
         exit();
