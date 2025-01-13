@@ -8,6 +8,6 @@ if(isset($_POST['submit']))
     $_email = $_POST['email'];
     $_password = $_POST['password'];
 
-    echo $_text . ' ' . $_email . ' ' . $_password;
+
 }
 ?>
