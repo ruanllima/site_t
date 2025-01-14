@@ -19,10 +19,11 @@ $sql_busca_email = query("SELECT * FROM person WHERE login_email = ?",['s', $ema
 if ($sql_busca_email->num_rows > 0) {
     echo "Usuário encontrado: " . $email;
 
-
+    // Get the password from the database
     $row = $sql_busca_email->fetch_assoc();
     $stored_password = $row['login_password'];
-    
+
+    // Verify the password using PHP's built-in password_verify function
     if (password_verify($password, $stored_password)) {
         // Login successful,  redirect to dashboard page
         header("Location: dashboard.html");
