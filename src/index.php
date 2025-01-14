@@ -48,10 +48,11 @@ unset($_SESSION['error']);
                 <div>
                     <label for="email" class="block text-sm/6 font-medium text-white p-1">Email</label>
                     <div>
-                        <input type="email" id="email" name="email" required class="block w-full rounded-xl bg-white px-3 py-1.5 text-base text-gray-700 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 ">
+                        <input type="email" id="email" name="email" required class="block w-full rounded-xl bg-white px-3 py-1.5 text-base 
+                        text-gray-700 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline
+                         focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 ">
                     </div>  
                 </div>
-
                 <div>
                     <div class="flex items-center justify-between">
                         <label for="password" class="block text-sm/6 font-medium text-white p-1">Password</label>  
