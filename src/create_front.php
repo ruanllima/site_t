@@ -12,13 +12,15 @@
 
         <h2 class="text-gray-800 font-bold text-center text-3xl m-20">Create Your Account</h2>
         
+        
+
         <div class="">
-            <form class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm" action="create_acc.php" method="POST">
+            <form class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm" action="create_back.php" method="POST">
 
                 <div class="">
                     <label for="text" class="block"> 
                         <span class="after:content-['*'] after:ml-0.5 after:text-red-500 font-medium text-slate-700 text-sm">Name</span>
-                        <input type="text" name="username" placeholder="Enter your full name" required class="bg-white border shadow-sm border-slate-300 
+                        <input type="text" name="username" placeholder="Enter your full name" required minlength="2" class="bg-white border shadow-sm border-slate-300 
                         placeholder-slate-400 placeholder:font-normal text-slate-600 font-light focus:outline-none focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1 
                         p-3 py-2 ">
                     </label>
@@ -68,7 +70,7 @@
                 <br><br>
                 <br><br>
                 <div class="flex items-center place-content-center">
-                    <button type="submit" name="submit" class="bg-indigo-500 rounded-md font-bold text-gray-100 transition ease-in-out delay-75 hover:-translate-y-1 
+                    <button type="submit" name="submit" id="submit" class="bg-indigo-500 rounded-md font-bold text-gray-100 transition ease-in-out delay-75 hover:-translate-y-1 
                     hover:scale-110 hover:bg-indigo-600
                     px-24 py-2 m-7 shadow-md">Create</button>
                 </div>
@@ -79,12 +81,16 @@
                 <script>
                     
 
+
                     function validate_match(){
                         const password = document.getElementById("password");
                         const password2 = document.getElementById("password2");
                         const match = document.getElementById("match");
+                        const submit = document.getElementById("submit");
+                        
                         
                         if(password.value != "" && password2.value != ""){
+                            // If password do not match
                             if (password.value != password2.value){
                                 match.textContent = "Passwords do not match";
                                 password2.classList.remove("focus:ring-sky-500");
@@ -95,7 +101,9 @@
                                 match.classList.add("text-red-500");
                                 password2.classList.add("border-red-500");
                                 password2.classList.add("focus:ring-red-500");
+                                submit.disabled = true;
                             }
+                            // If passwords match
                             if (password.value == password2.value){
                                 match.textContent = "Passwords match";
                                 match.classList.remove("text-red-500");
@@ -104,6 +112,7 @@
                                 match.classList.add("text-green-500");
                                 password2.classList.add("border-green-500");
                                 password2.classList.add("focus:ring-green-500");
+                                submit.disabled = false;
                             }
                         }
                         if(password2.value == ""){
@@ -114,6 +123,7 @@
                             password2.classList.remove("focus:ring-red-500");
                             password2.classList.add("border-slate-500");
                             password2.classList.add("focus:ring-sky-500");
+                            submit.disabled = true;
                         }
                         
 
@@ -128,6 +138,7 @@
                         const letter = document.getElementById("letter");
                         const special = document.getElementById("special");
                         const list = document.getElementById("list");
+                        let i = 0;
                         
                         // first condition
                         if(password.length >= 8){
@@ -135,12 +146,14 @@
                             length.classList.add("text-green-500");
                             length.classList.remove("marker:text-red-500");
                             length.classList.add("marker:text-green-500");
+                            i++;
                         }
                         else{
                             length.classList.remove("text-green-500");
                             length.classList.add("text-red-500");
                             length.classList.remove("marker:text-green-500");
                             length.classList.add("marker:text-red-500");
+                            i--;
                         }
 
                         // second condition  
@@ -149,12 +162,14 @@
                             number.classList.add("text-green-500");
                             number.classList.remove("marker:text-red-500");
                             number.classList.add("marker:text-green-500");
+                            i++;
                         }
                         else{
                             number.classList.remove("text-green-500");
                             number.classList.add("text-red-500");
                             number.classList.remove("marker:text-green-500");
                             number.classList.add("marker:text-red-500");
+                            i--;
                         }
 
                         // third condition
@@ -163,6 +178,7 @@
                             letter.classList.add("text-green-500");
                             letter.classList.remove("marker:text-red-500");
                             letter.classList.add("marker:text-green-500");
+                            i++;
                         }
                         else{
                             letter.classList.remove("text-green-500");
@@ -178,12 +194,21 @@
                             special.classList.add("text-green-500");
                             special.classList.remove("marker:text-red-500");
                             special.classList.add("marker:text-green-500");
+                            i++;
                         }
                         else{
                             special.classList.remove("text-green-500");
                             special.classList.add("text-red-500");
                             special.classList.remove("marker:text-green-500");
                             special.classList.add("marker:text-red-500");
+                            i--;
+                        }
+
+                        if(i==4){
+                            submit.disabled = false;
+                        }
+                        else{
+                            submit.disabled = true;
                         }
 
                     }

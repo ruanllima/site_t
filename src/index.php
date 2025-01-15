@@ -66,12 +66,10 @@ unset($_SESSION['error']);
                         </div>
                         <div><h1></h1></div>
                         <div class="text-sm">
-                            <a href="./create.html" class="font-semibold text-indigo-700 hover:text-indigo-600">Create account</a>
+                            <a href="./create_front.php" class="font-semibold text-indigo-700 hover:text-indigo-600">Create account</a>
                         </div>
                     </div>
-                        
                 </div>
-
                 <div>
                     <button type="submit" name="submit" class="flex w-full justify-center rounded-md bg-indigo-800 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
                 </div>
