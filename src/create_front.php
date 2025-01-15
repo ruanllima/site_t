@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en" class="h-full bg-gray-800">
 <head>
@@ -30,7 +32,7 @@
 
         <h2 class="text-gray-800 font-bold text-center text-3xl m-20">Create Your Account</h2>
         <div class="">
-            <form class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm" action="create_back.php" method="POST">
+            <form id="form" class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm" action="create_back.php" method="POST">
 
                 <div class="">
                     <label for="text" class="block"> 
@@ -46,17 +48,18 @@
                 <div>
                     <label for="email" class="block"> 
                         <span class="after:content-['*'] after:ml-0.5 after:text-red-500 font-medium text-slate-700 text-sm">Email</span>
-                        <input type="email" name="email" placeholder="you@example.com" required class="bg-white border shadow-sm border-slate-300 
+                        <input type="email" name="email" id="email" placeholder="you@example.com" oninput="validate_email2()" required class="bg-white border shadow-sm border-slate-300 
                         placeholder-slate-400 placeholder:font-normal text-slate-600 font-light focus:outline-none focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1 
                         p-3 py-2 ">
                     </label>
+                    <span id="alert_email" style="display: none" class=" text-xs text-red-500 font-light italic">This email is already in use</span>
                 </div>
                 <br>
                 <br>
                 <div>
                     <label for="password" class="block"> 
                         <span class="after:content-['*'] after:ml-0.5 after:text-red-500 font-medium text-slate-700 text-sm">Password</span>
-                        <input type="password" name="password" id="password" oninput="validate_password(); validate_match()" placeholder="Enter your password" required class="bg-white border shadow-sm border-slate-300 
+                        <input type="password" name="password" id="password" oninput="validate_password(); validate_match(); validate_email()" placeholder="Enter your password" required class="bg-white border shadow-sm border-slate-300 
                         placeholder-slate-400 placeholder:font-normal text-slate-600 font-light focus:outline-none focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1 
                         p-3 py-2">
                     </label>
@@ -93,15 +96,48 @@
 
                 </div>
                     
+                <script src="./JS/Jquery/jquery-3.7.1.min.js"></script>
+                <script src="./JS/script.js"></script>
                 <script>
+
+                    function validate_email() {
+                        const email = document.getElementById('email').value;
+                        const alert_email = document.getElementById("alert_email");
+                        
+                        // Verifica se o campo de email não está vazio
+                        if (email.length > 0) {
+                            console.log("um");
+                            const xhttp = new XMLHttpRequest();
+                            xhttp.onload = function() {
+                                console.log("dois");
+                                if (this.responseText == "Email is already in use") {
+                                    console.log("tres");
+                                    alert_email.style.display = "block"; // Mostra o alerta
+                                } else {
+                                    console.log("quatro");
+                                    alert_email.style.display = "none"; // Esconde o alerta
+                                }
+                            };
+                            // Envia o email digitado para o PHP usando POST
+                            xhttp.open("POST", "verify_email.php", true);
+                            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                            xhttp.send("email=" + encodeURIComponent(email));
+                            console.log("cinco");
+                        } else {
+                            alert_email.style.display = "none"; // Esconde o alerta se o campo estiver vazio
+                        }
+                        }
+
                     
                     function validate_form(){
                         const submit = document.getElementById("submit");
                         const alert = document.getElementById("alert");
+                        const email = document.getElementById("email");
                         validate_to_match = validate_match();
-                        validate_to_password =validate_password();
-
+                        validate_to_password = validate_password();
+                    
                         if (validate_to_password && validate_to_match){
+                       
                             
                         }
                         else{
