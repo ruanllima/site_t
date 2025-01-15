@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // Include our conection file
 include('config.php');
 

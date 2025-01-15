@@ -82,7 +82,6 @@ unset($_SESSION['error']);
             document.getElementById('alert').style.display = 'none';
         }
 
-        // Fecha o alert após 3 segundos automaticamente
         setTimeout(() => {
             const alert = document.getElementById('alert');
             if (alert) alert.style.display = 'none';
