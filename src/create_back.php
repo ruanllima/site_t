@@ -22,7 +22,7 @@ $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 // Insert the data in the database
 $result = query("INSERT INTO person (username, login_email, login_password) VALUES (?,?,?)",
  ['sss', $username, $email, $hashed_password], $conn);
- header("Location: login_front.php");
+ header("Location: login.php");
  exit();
 
 ?>

@@ -32,7 +32,7 @@ if ($sql_busca_email->num_rows > 0) {
     } else {
         // Incorrect password, display error message and continue in the login page
         $_SESSION['error'] = 'Senha incorreta';
-        header("Location: login_front.php");
+        header("Location: login.php");
         exit();
     }
     
@@ -40,7 +40,7 @@ if ($sql_busca_email->num_rows > 0) {
 } else {
     // User not found, display error message and continue in the login page
     $_SESSION['error'] = "Usuário não encontrado";
-    header("Location: login_front.php");
+    header("Location: login.php");
     exit();
 }
 ?>

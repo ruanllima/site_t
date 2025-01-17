@@ -66,7 +66,7 @@ unset($_SESSION['error']);
                         </div>
                         <div><h1></h1></div>
                         <div class="text-sm">
-                            <a href="./create_front.php" class="font-semibold text-indigo-700 hover:text-indigo-600">Create account</a>
+                            <a href="./create.php" class="font-semibold text-indigo-700 hover:text-indigo-600">Create account</a>
                         </div>
                     </div>
                 </div>
