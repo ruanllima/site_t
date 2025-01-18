@@ -48,7 +48,7 @@
                 <div>
                     <label for="email" class="block"> 
                         <span class="after:content-['*'] after:ml-0.5 after:text-red-500 font-medium text-slate-700 text-sm">Email</span>
-                        <input type="email" name="email" id="email" placeholder="you@example.com" oninput="validate_email2()" required class="bg-white border shadow-sm border-slate-300 
+                        <input type="email" name="email" id="email" placeholder="you@example.com" oninput="validate_email()" required class="bg-white border shadow-sm border-slate-300 
                         placeholder-slate-400 placeholder:font-normal text-slate-600 font-light focus:outline-none focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1 
                         p-3 py-2 ">
                     </label>
@@ -59,7 +59,7 @@
                 <div>
                     <label for="password" class="block"> 
                         <span class="after:content-['*'] after:ml-0.5 after:text-red-500 font-medium text-slate-700 text-sm">Password</span>
-                        <input type="password" name="password" id="password" oninput="validate_password(); validate_match(); validate_email()" placeholder="Enter your password" required class="bg-white border shadow-sm border-slate-300 
+                        <input type="password" name="password" id="password" oninput="validate_password(); validate_match()" placeholder="Enter your password" required class="bg-white border shadow-sm border-slate-300 
                         placeholder-slate-400 placeholder:font-normal text-slate-600 font-light focus:outline-none focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1 
                         p-3 py-2">
                     </label>
@@ -97,36 +97,10 @@
                 </div>
                     
                 <script src="./JS/Jquery/jquery-3.7.1.min.js"></script>
-                <script src="./JS/script.js"></script>
+                <script src="./JS/validate.js"></script>
                 <script>
 
-                    function validate_email() {
-                        const email = document.getElementById('email').value;
-                        const alert_email = document.getElementById("alert_email");
-                        
-                        // Verifica se o campo de email não está vazio
-                        if (email.length > 0) {
-                            console.log("um");
-                            const xhttp = new XMLHttpRequest();
-                            xhttp.onload = function() {
-                                console.log("dois");
-                                if (this.responseText == "Email is already in use") {
-                                    console.log("tres");
-                                    alert_email.style.display = "block"; // Mostra o alerta
-                                } else {
-                                    console.log("quatro");
-                                    alert_email.style.display = "none"; // Esconde o alerta
-                                }
-                            };
-                            // Envia o email digitado para o PHP usando POST
-                            xhttp.open("POST", "verify_email.php", true);
-                            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                            xhttp.send("email=" + encodeURIComponent(email));
-                            console.log("cinco");
-                        } else {
-                            alert_email.style.display = "none"; // Esconde o alerta se o campo estiver vazio
-                        }
-                        }
+                    
 
                     
                     function validate_form(){
