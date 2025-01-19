@@ -22,3 +22,8 @@
 .logo{
     image-ur: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Download-Icon.png'
 }
+
+.box_password{
+    @apply rounded-lg shadow-sm border border-slate-200 bg-white p-1 w-12 h-12 m-1 appearance-none text-center font-light text-2xl 
+    hover:shadow-md  focus:ring-sky-500 focus:ring-1 focus:outline-none uppercase
+}

@@ -37,9 +37,9 @@
                 <div class="">
                     <label for="text" class="block"> 
                         <span class="after:content-['*'] after:ml-0.5 after:text-red-500 font-medium text-slate-700 text-sm">Name</span>
-                        <input type="text" name="username" id="username" placeholder="Enter your full name" oninput="validate_form(); validate_username()" required minlength="2" class="bg-white border shadow-sm border-slate-300 
-                        placeholder-slate-400 placeholder:font-normal text-slate-600 font-light focus:outline-none focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1 
-                        p-3 py-2 ">
+                        <input type="text" name="username" id="username" placeholder="Enter your full name" oninput="validate_form(); validate_username()" required minlength="2" 
+                        class="bg-white border shadow-sm border-slate-300 placeholder-slate-400 placeholder:font-normal text-slate-600 
+                        font-light focus:outline-none focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1 p-3 py-2 ">
                     </label>
                     
                     
