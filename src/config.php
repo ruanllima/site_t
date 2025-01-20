@@ -11,9 +11,9 @@ $dbName = 'site';
 //SMTP EMAIL
 
 define("SMTP_HOST", 'smtp.gmail.com');
-define("SMTP_PORT", 587);
-define("SMTP_USER", 'programacao.nes@gmail.com');
-define("SMTP_PASS", 'dezembrode81');
+define("SMTP_PORT", 465);
+define("SMTP_USER", 'ruanlimafn@gmail.com');
+define("SMTP_PASS", 'aexv yega clgb iizz');
 
 // Conectar ao banco de dados
 $conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);

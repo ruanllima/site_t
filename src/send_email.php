@@ -4,44 +4,40 @@ include "config.php";
 include __DIR__ . '/../vendor/autoload.php';  // Caminho relativo ao diretório 'src'
 
 
-
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-//Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
 
-try {
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = SMTP_HOST;                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = SMTP_USER;                     //SMTP username
-    $mail->Password   = SMTP_PASS;                               //SMTP password
-    $mail->Port       = SMTP_PORT;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $to = $_POST['email'];
+    
+    $mail = new PHPMailer(true);
 
+    try {
+        // Configuração do servidor SMTP
+        $mail->isSMTP();
+        $mail->CharSet = 'UTF-8';
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'ruanlimafn@gmail.com';
+        $mail->Password = 'aexv yega clgb iizz'; // Sua senha aqui
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
 
-    //Recipients
-    $mail->setFrom('programacao.nes@gmail.com', 'Ruan Lima');
-    $mail->addAddress('spikedph@gmail.com', 'Ruan Lima');     //Add a recipient
+        // Configuração do remetente e destinatário
+        $mail->setFrom('ruanlimafn@gmail.com', 'Ruan Lima');
+        $mail->addAddress($to);
 
+        // Conteúdo do e-mail
+        $mail->isHTML(true);
+        $mail->Subject = 'Recuperação de Senha';
+        $mail->Body = '<p>Olá, este é um teste de envio de e-mail!</p>';
 
-    //Attachments
-    //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body EMAIL <b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-    $mail->send();
-    echo 'Message has been sent';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        // Enviar o e-mail
+        $mail->send();
+        echo 'E-mail enviado com sucesso!';
+    } catch (Exception $e) {
+        echo "Erro ao enviar e-mail: {$mail->ErrorInfo}";
+    }
 }
-
 ?>
