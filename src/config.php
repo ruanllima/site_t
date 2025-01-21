@@ -30,4 +30,9 @@ function query($query, $params, $conn){
     $stmt->execute();
     return $stmt->get_result();
 }
+
+function random_code(){
+    $bytes = random_bytes(3);
+    return bin2hex($bytes);
+}
 ?>
