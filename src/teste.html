@@ -14,12 +14,13 @@
     <div class="bg-gray-100 w-2/5 top-20 shadow-lg rounded-md ">
 
         <div class="flex flex-col items-center">
-            <h2 class="text-gray-800 font-bold text-center text-3xl m-10 mt-16 mb-12">Recover Password</h2>
+                <h2 class="text-gray-800 font-bold text-center text-3xl m-10 mt-16 mb-12">Recover Password</h2>
                 <h1 class="text-gray-400 text-center text-lg pb-5">Your password has been reset!</h1>
-                <form action="recover_password.php" method="POST" class="flex flex-col items-center sm:mx-auto sm:w-full ">
-                
+                <form action="login.php" method="POST" class="flex flex-col items-center sm:mx-auto sm:w-full">
+                    <input placeholder="Email" class="w-2/4 p-2 invalid_box">
                     <button type="submit" id="submit1" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition hover:translate-y-1
                     hover:scale-110 ease-in-out delay-7 hover:bg-indigo-700 hover:text-slate-200">Login</button>
+                    
                 </form>
         </div>
     </div>

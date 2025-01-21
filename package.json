@@ -10,8 +10,5 @@
   "description": "",
   "dependencies": {
     "nodemailer": "^6.9.16"
-  },
-  "devDependencies": {
-    "tailwindcss-animate": "^1.0.7"
   }
 }

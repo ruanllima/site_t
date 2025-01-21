@@ -33,13 +33,24 @@ unset($_SESSION['status']);
             <?php endif; ?>
 
             <?php if($check === 'Email not found'): ?>
+                <div id="alert">
+                    <div class="alert absolute bottom-8 left-5 flex items-center opacity-80 bg-yellow-50 border border-yellow-600 rounded-md p-4 py-7 pr-20">
+                        <div class="flex-shrink-0 text-yellow-500 mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 15a1.5 1.5 0 11-1.5 1.5A1.5 1.5 0 0112 17zm1-4.5h-2v-5h2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-normal text-yellow-800 mb-1">Email not found!</h4>
+                            <h2 class="text-yellow-700 text-sm"></h2>
+                        </div>
+                    </div>
+                </div>
                 <h2 class="text-gray-800 font-bold text-center text-3xl m-10 mt-16 mb-12">Recover Password</h2>
                 <h1 class="text-gray-400 text-center text-sm pb-5">Enter your email to recover your password</h1>
                 <form action="recover_password.php" method="POST" class="flex flex-col items-center sm:mx-auto sm:w-full ">
-                    <input type="email" name="email" id="email" placeholder="you@example.com" class="animate-in slide-in-from-top bg-white rounded-md border border-red-500 shadow-sm
-                    focus:ring-1 focus:ring-red-500 focus:outline-none font-light text-slate-600 p-2 mb-7 pr-10 w-2/4 placeholder:text-sm 
-                    placeholder:text-slate-400 placeholder:font-light">
-                    <button type="submit" id="submit1" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition hover:translate-y-1
+                    <input type="email" name="email" id="email" placeholder="you@example.com" class="p-2 mb-7 pr-10 w-2/4 invalid_box">
+                    <button type="submit" name="submit1" id="submit1" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition hover:translate-y-1
                     hover:scale-110 ease-in-out delay-7 hover:bg-indigo-700 hover:text-slate-200">Enter</button>
                 </form>
             <?php endif; ?>
