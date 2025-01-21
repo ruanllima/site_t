@@ -34,7 +34,7 @@ if(isset($_POST['submit2'])){
 
     $code_full = $code1.$code2.$code3.$code4.$code5.$code6;
 
-    if($code===$code){
+    if($code===$code_full){
         $_SESSION['status'] = 'Validate';
         header('Location: forgotPassword.php');
     }
@@ -42,6 +42,14 @@ if(isset($_POST['submit2'])){
         $_SESSION['status'] = 'Invalidate';
         header('Location: forgotPassword.php');
     }
+}
+
+if(isset($_POST['submit3'])){
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $email = $_SESSION['email'];
+    $query = query("UPDATE person SET login_password = ? WHERE login_email = ?", ['ss', $password, $email], $conn);
+    $_SESSION['status'] = 'Password changed';
+    header('Location: forgotPassword.php');
 }
 
 ?>

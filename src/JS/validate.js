@@ -216,6 +216,28 @@ function validate_form(){
     
 }
 
+function validate_newPassword(){
+    const submit = document.getElementById("submit3");
+    validate_to_match = validate_match();
+    validate_to_password = validate_password();
+
+    console.log(validate_to_match, validate_to_password);
+
+    if (validate_to_password && validate_to_match) {
+        submit.disabled = false;
+        submit.classList.add("bg-indigo-500", "text-gray-100", "transition", "ease-in-out", "delay-75", "hover:-translate-y-1", "hover:scale-110", "hover:bg-indigo-600");
+        submit.classList.remove("bg-slate-300", "text-gray-400");
+        console.log("FALSO");
+    } else {
+        submit.disabled = true;
+        submit.classList.add("bg-slate-300", "text-gray-400");
+        submit.classList.remove("bg-indigo-500", "text-gray-100", "transition", "ease-in-out", "delay-75", "hover:-translate-y-1", "hover:scale-110", "hover:bg-indigo-600");
+        console.log("VERDADEIRO");
+    }
+    
+    
+}
+
 function validate_match(){
     const password = document.getElementById("password");
     const password2 = document.getElementById("password2");

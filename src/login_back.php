@@ -26,7 +26,7 @@ if ($sql_busca_email->num_rows > 0) {
     // Verify the password using PHP's built-in password_verify function
     if (password_verify($password, $stored_password)) {
         // Login successful,  redirect to dashboard page
-        header("Location: dashboard.html");
+        header("Location: dashboard.php");
         exit();
     
     } else {

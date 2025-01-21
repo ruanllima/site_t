@@ -62,11 +62,11 @@ unset($_SESSION['error']);
                     </div><br>
                     <div class="inline-grid grid-cols-3 gap-5 justify-items-end">
                         <div class="text-sm">
-                            <a href="#" class="font-semibold text-indigo-700 hover:text-indigo-600">Forgot password?</a>
+                            <a href="./forgotPassword.php" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
                         </div>
                         <div><h1></h1></div>
                         <div class="text-sm">
-                            <a href="./create.php" class="font-semibold text-indigo-700 hover:text-indigo-600">Create account</a>
+                            <a href="./create.php" class="font-semibold text-indigo-600 hover:text-indigo-500">Create account</a>
                         </div>
                     </div>
                 </div>
