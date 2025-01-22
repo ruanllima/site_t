@@ -138,8 +138,8 @@ unset($_SESSION['status']);
     </div>
 
     <script src="JS/validate.js"></script>
+    <script src="JS/input.js"></script>
     <script>
-        
 
     </script>
 </body>
