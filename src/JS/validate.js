@@ -1,3 +1,15 @@
+function key_focus(next) {
+    const element = document.getElementById(next);
+    console.log("1");
+    if (element) {
+        console.log('2');
+        element.focus();
+    } else {
+        console.log(`Elemento com ID "${next}" não encontrado.`);
+    }
+}
+
+
 function validate_password() {
     const password = document.getElementById("password");
 

@@ -82,18 +82,12 @@ unset($_SESSION['status']);
                     <h1 class="text-gray-400 text-center text-sm pb-5">Enter the code sent to your email</h1>
                     <form action="recover_password.php" method="POST" class="flex flex-col items-center sm:mx-auto sm:w-full ">
                         <div class="inline-flex">
-                            <input type="text" name= "code1" id="code1" maxlength="1" class="rounded-lg shadow-sm border border-red-500 bg-white p-1 w-12 h-12 m-1 appearance-none text-center font-light text-2xl 
-    hover:shadow-md  focus:ring-red-500 focus:ring-1 focus:outline-none uppercase">
-                            <input type="text" name= "code2" id="code2" maxlength="1" class="rounded-lg shadow-sm border border-red-500 bg-white p-1 w-12 h-12 m-1 appearance-none text-center font-light text-2xl 
-    hover:shadow-md  focus:ring-red-500 focus:ring-1 focus:outline-none uppercase">
-                            <input type="text" name= "code3" id="code3" maxlength="1" class="rounded-lg shadow-sm border border-red-500 bg-white p-1 w-12 h-12 m-1 appearance-none text-center font-light text-2xl 
-    hover:shadow-md  focus:ring-red-500 focus:ring-1 focus:outline-none uppercase">
-                            <input type="text" name= "code4" id="code4" maxlength="1" class="rounded-lg shadow-sm border border-red-500 bg-white p-1 w-12 h-12 m-1 appearance-none text-center font-light text-2xl 
-    hover:shadow-md  focus:ring-red-500 focus:ring-1 focus:outline-none uppercase">
-                            <input type="text" name= "code5" id="code5" maxlength="1" class="rounded-lg shadow-sm border border-red-500 bg-white p-1 w-12 h-12 m-1 appearance-none text-center font-light text-2xl 
-    hover:shadow-md  focus:ring-red-500 focus:ring-1 focus:outline-none uppercase">
-                            <input type="text" name= "code6" id="code6" maxlength="1" class="rounded-lg shadow-sm border border-red-500 bg-white p-1 w-12 h-12 m-1 appearance-none text-center font-light text-2xl 
-    hover:shadow-md  focus:ring-red-500 focus:ring-1 focus:outline-none uppercase">
+                            <input type="text" name= "code1" id="code1" maxlength="1" style="animation-delay: 10ms;" oninput="key_focus('code2')" class="box_password invalid_box">
+                            <input type="text" name= "code2" id="code2" maxlength="1" style="animation-delay: 20ms;" oninput="key_focus('code3')" class="box_password invalid_box ">
+                            <input type="text" name= "code3" id="code3" maxlength="1" style="animation-delay: 30ms;" oninput="key_focus('code4')" class="box_password invalid_box">
+                            <input type="text" name= "code4" id="code4" maxlength="1" style="animation-delay: 40ms;" oninput="key_focus('code5')" class="box_password invalid_box">
+                            <input type="text" name= "code5" id="code5" maxlength="1" style="animation-delay: 50ms;" oninput="key_focus('code6')" class="box_password invalid_box">
+                            <input type="text" name= "code6" id="code6" maxlength="1" style="animation-delay: 60ms;" class="box_password invalid_box">
                         </div>
                         <button type="submit" name="submit2" id="submit2" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition hover:translate-y-1
                         hover:scale-110 ease-in-out delay-7 hover:bg-indigo-700 hover:text-slate-200">Enter</button>
@@ -144,5 +138,9 @@ unset($_SESSION['status']);
     </div>
 
     <script src="JS/validate.js"></script>
+    <script>
+        
+
+    </script>
 </body>
 </html>
