@@ -33,6 +33,8 @@ if(isset($_POST['submit2'])){
     $code6 = $_POST['code6'];
 
     $code_full = $code1.$code2.$code3.$code4.$code5.$code6;
+    $code_full = strtoupper($code_full);
+    $code = strtoupper($code);
 
     if($code===$code_full){
         $_SESSION['status'] = 'Validate';

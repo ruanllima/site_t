@@ -25,11 +25,21 @@ module.exports = {
          '70%': { transform:'translateY(0%)'},
          '80%': { transform:'translateY(-3%)'},
           '90%': { transform:'translateY(0)'},
+      },
+      fadeIn: {
+        '0%': { opacity: '0' },
+        '100%': { opacity: '1' },
+      },
+      fadeOut: {
+        '0%': { opacity: '1' },
+        '100%': { opacity: '0' },
       }
       },
       animation: {
-        'shake-animation': 'shake 1s ease-out',
-        'bounce-alert': 'bounce_alert 1s ease-in-out'
+        'shake-animation': 'shake 700ms ease-out',
+        'bounce-alert': 'bounce_alert 1s ease-in-out',
+        'fadeIn': 'fadeIn 1s ease-in-out',
+        'fadeOut': 'fadeOut 2s ease-in-out',
       }
     },
   },

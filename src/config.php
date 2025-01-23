@@ -33,6 +33,8 @@ function query($query, $params, $conn){
 
 function random_code(){
     $bytes = random_bytes(3);
-    return bin2hex($bytes);
+    $string = bin2hex($bytes);
+
+    return strtoupper($string);
 }
 ?>
