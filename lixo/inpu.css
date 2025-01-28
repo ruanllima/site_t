@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.align_text_full{
+    @apply flex justify-center items-center
+}
+
+.align_div_full{
+    display: 'flex';
+    justify-content: center;
+    align-items: center;
+    height: screen;
+    width: screen;
+
+}
+
+.logo{
+    image-ur: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Download-Icon.png'
+}
+
+.box_password{
+    @apply rounded-lg shadow-sm border border-slate-200 bg-white p-1 w-12 h-12 m-1 appearance-none text-center font-light text-2xl 
+    hover:shadow-md  focus:ring-sky-500 focus:ring-1 focus:outline-none uppercase text-slate-700
+}
+
+.box_password_invalid{
+    @apply rounded-lg shadow-sm border border-red-500 bg-white p-1 w-12 h-12 m-1 appearance-none text-center font-light text-2xl 
+    hover:shadow-md  focus:ring-red-500 focus:ring-1 focus:outline-none uppercase
+}
+
+.invalid_box{
+    @apply animate-shake-animation bg-white border border-red-500 rounded-md shadow-sm font-light text-slate-700
+    placeholder:text-red-400 placeholder:italic focus:ring-1 focus:outline-none focus:ring-red-500 shadow-red-400
+}
+
+.alert{
+    @apply animate-bounce-alert flex flex-wrap items-center rounded-b-lg justify-center py-3 pl-4 pr-14 text-base font-medium [transition:all_0.5s_ease] 
+    border-solid border border-[#f85149] text-[#b22b2b] bg-[linear-gradient(#f851491a,#f851491a)]
+}
+
+.alert_positive {
+    @apply animate-bounce-alert flex flex-wrap items-center rounded-b-lg justify-center py-3 pl-4 pr-14 text-base font-medium [transition:all_0.5s_ease]
+    border-solid border border-[#4caf50] text-[#2e7d32] bg-[linear-gradient(#4caf501a,#4caf501a)];
+}
+
+
+.fade-in{
+    @apply animate-fadeIn shadow-sm 
+}
+
+.fade-out{
+    @apply animate-fadeOut shadow-sm
+}
+
+

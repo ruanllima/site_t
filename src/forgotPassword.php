@@ -27,9 +27,16 @@ unset($_SESSION['status']);
                     <input type="email" name="email" id="email" placeholder="you@example.com" class="bg-white rounded-md border border-slate-300 shadow-sm
                     focus:ring-1 focus:ring-sky-500 focus:outline-none font-light text-slate-600 p-2 mb-7 pr-10 w-2/4 placeholder:text-sm 
                     placeholder:text-slate-400 placeholder:font-light">
-                    <button type="submit" name="submit1" id="submit1" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition hover:translate-y-1
+                    <button type="submit" name="submit1" id="submit1" onclick="loading()" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition hover:translate-y-1
                     hover:scale-110 ease-in-out delay-7 hover:bg-indigo-700 hover:text-slate-200">Enter</button>
                 </form>
+                <div style="display:none" id="loading" class="absolute inset-0 flex justify-center top-14">
+                    <div class="inline-flex gap-1">
+                        <div class="w-3 h-6 bg-[#076fe5] animate-keys-loading"></div>
+                        <div style="animation-delay: 200ms;" class="w-3 h-6 bg-[#076fe5] animate-keys-loading"></div>
+                        <div style="animation-delay: 300ms;" class="w-3 h-6 bg-[#076fe5] animate-keys-loading"></div>
+                    </div>
+                </div>
             <?php endif; ?>
 
             <?php if($check === 'Email not found'): ?>
@@ -52,9 +59,16 @@ unset($_SESSION['status']);
                 <h1 class="text-gray-400 text-center text-sm pb-5">Enter your email to recover your password</h1>
                 <form action="recover_password.php" method="POST" class="flex flex-col items-center sm:mx-auto sm:w-full ">
                     <input type="email" name="email" id="email" placeholder="you@example.com" class="p-2 mb-7 pr-10 w-2/4 invalid_box">
-                    <button type="submit" name="submit1" id="submit1" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition hover:translate-y-1
+                    <button type="submit" name="submit1" id="submit1"  onclick="loading()" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition hover:translate-y-1
                     hover:scale-110 ease-in-out delay-7 hover:bg-indigo-700 hover:text-slate-200">Enter</button>
                 </form>
+                <div style="display:none" id="loading" class="absolute inset-0 flex justify-center top-14">
+                    <div class="inline-flex gap-1">
+                        <div class="w-3 h-6 bg-[#076fe5] animate-keys-loading"></div>
+                        <div style="animation-delay: 200ms;" class="w-3 h-6 bg-[#076fe5] animate-keys-loading"></div>
+                        <div style="animation-delay: 300ms;" class="w-3 h-6 bg-[#076fe5] animate-keys-loading"></div>
+                    </div>
+                </div>
             <?php endif; ?>
 
             <?php if($check === 'Email exists'): ?>
@@ -184,6 +198,10 @@ unset($_SESSION['status']);
             const alert = document.getElementById('alert');
             if (alert) alert.style.display = 'none';
         }, 7000);
+
+        function loading(){
+            document.getElementById('loading').style.display = "";
+        }
 
     </script>
     </script>
