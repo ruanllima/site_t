@@ -3,7 +3,7 @@
 @theme {
   --animate-wiggle: wiggle 1s ease-in-out infinite;
   --animate-fade-in: fade-in 2s ease-in-out infinite;
-  --animate-fade-out: fade-out 2s ease-in-out infinite;
+  --animate-fade-out: fade-out 2s ease-in-out;
   --animate-shake: shake 700ms ease-in;
   --animate-bounce-alert: bounce-alert 900ms ease-in-out;
   --animate-keys-loading: keys-loading 1s ease-in-out infinite;
@@ -39,7 +39,7 @@
   }
   @keyframes bounce-alert {
     10% {transform: translateY(0%);}
-    30% {transform: translateY(-15%);}
+    30% {transform: translateY(-25%);}
     40% {transform: translateY(0%);}
     55% {transform: translateY(-7%);}
     70% {transform: translateY(0%);}

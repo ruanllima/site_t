@@ -21,10 +21,29 @@ unset($_SESSION['error']);
             <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-white">Sign in your account</h2>
         </div>
 
+            <?php if($error == "Created"): ?>
+                <div id="alert" >
+                    <div class="alert_positive absolute bottom-7 left-5">
+                        <div class="flex-shrink-0 text-green-500 mr-3">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
+                            height="28" width="28" class="h-7 w-7" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 12l2 2 4-4"></path>
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-green-300">Your account has been created successfully!!</h4>
+                            <h2 class="font-light italic text-sm text-green-300">Now you can log in to your account.</h2>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+                
+                
         
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-
                 <!-- Exibindo erro, se houver -->
             <?php if ($error == "Senha incorreta"): ?>
                 
@@ -33,7 +52,7 @@ unset($_SESSION['error']);
 
 
             <form action="login_back.php" method="POST"> 
-                <?php if ($error == null): ?>
+                <?php if ($error == null || $error == "Created"): ?>
                     <div>
                         <label for="email" class="block text-sm/6 font-medium text-white p-1">Email</label>
                         <div>
@@ -110,10 +129,15 @@ unset($_SESSION['error']);
             document.getElementById('alert').style.display = 'none';
         }
 
+        setTimeout(()=> {
+            const alert = document.getElementById('alert');
+            if (alert) alert.classList.add('animate-fade-out');
+        }, 7000);
+
         setTimeout(() => {
             const alert = document.getElementById('alert');
             if (alert) alert.style.display = 'none';
-        }, 3000);
+        }, 9000);
     </script>
 </body>
 </html>

@@ -165,19 +165,19 @@ unset($_SESSION['status']);
                     hover:scale-110 ease-in-out delay-7 hover:bg-indigo-700 hover:text-slate-200">Login</button>
                 </form>
                 <div id="alert">
-                <div class="alert_positive absolute bottom-20 left-1/3 right-1/3">
-                        <div class="flex-shrink-0 text-green-500 mr-3">
-                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
-                            height="28" width="28" class="h-7 w-7" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 12l2 2 4-4"></path>
-                                <circle cx="12" cy="12" r="10"></circle>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 class="font-normal text-green-300 mb-1">Use your new password to log in!</h4>
-                        </div>
+                    <div class="alert_positive absolute bottom-20 left-1/3 right-1/3">
+                            <div class="flex-shrink-0 text-green-500 mr-3">
+                                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
+                                height="28" width="28" class="h-7 w-7" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 12l2 2 4-4"></path>
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-normal text-green-300 mb-1">Use your new password to log in!</h4>
+                            </div>
                     </div>
-            </div>
+                </div>
             <?php endif; ?>
             
         </div>
