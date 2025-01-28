@@ -27,8 +27,7 @@ unset($_SESSION['status']);
                     <input type="email" name="email" id="email" placeholder="you@example.com" class="bg-white rounded-md border border-slate-300 shadow-sm
                     focus:ring-1 focus:ring-sky-500 focus:outline-none font-light text-slate-600 p-2 mb-7 pr-10 w-2/4 placeholder:text-sm 
                     placeholder:text-slate-400 placeholder:font-light">
-                    <button type="submit" name="submit1" id="submit1" onclick="loading()" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition hover:translate-y-1
-                    hover:scale-110 ease-in-out delay-7 hover:bg-indigo-700 hover:text-slate-200">Enter</button>
+                    <button type="submit" name="submit1" id="submit1" onclick="loading()" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition_button hover:bg-indigo-700 hover:text-slate-200">Enter</button>
                 </form>
                 <div style="display:none" id="loading" class="absolute inset-0 flex justify-center top-14">
                     <div class="inline-flex gap-1">
@@ -40,7 +39,7 @@ unset($_SESSION['status']);
             <?php endif; ?>
 
             <?php if($check === 'Email not found'): ?>
-                <div id="alert">
+                <div id="alert" class="">
                     <div class="alert absolute bottom-20 left-1/3 right-1/3">
                         <div class="flex-shrink-0 text-red-500 mr-3">
                             <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
@@ -55,12 +54,12 @@ unset($_SESSION['status']);
                         </div>
                     </div>
                 </div>
+
                 <h2 class="text-gray-800 font-bold text-center text-3xl m-10 mt-16 mb-12">Recover Your Password</h2>
                 <h1 class="text-gray-400 text-center text-sm pb-5">Enter your email to recover your password</h1>
                 <form action="recover_password.php" method="POST" class="flex flex-col items-center sm:mx-auto sm:w-full ">
                     <input type="email" name="email" id="email" placeholder="you@example.com" class="p-2 mb-7 pr-10 w-2/4 invalid_box">
-                    <button type="submit" name="submit1" id="submit1"  onclick="loading()" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition hover:translate-y-1
-                    hover:scale-110 ease-in-out delay-7 hover:bg-indigo-700 hover:text-slate-200">Enter</button>
+                    <button type="submit" name="submit1" id="submit1"  onclick="loading()" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition_button hover:bg-indigo-700 hover:text-slate-200">Enter</button>
                 </form>
                 <div style="display:none" id="loading" class="absolute inset-0 flex justify-center top-14">
                     <div class="inline-flex gap-1">
@@ -84,8 +83,7 @@ unset($_SESSION['status']);
                             <input type="text" name= "code5" id="code5" maxlength="1" class="box_password">
                             <input type="text" name= "code6" id="code6" maxlength="1" class="box_password">
                         </div>
-                        <button type="submit" name="submit2" id="submit2" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition hover:translate-y-1
-                        hover:scale-110 ease-in-out delay-7 hover:bg-indigo-700 hover:text-slate-200">Enter</button>
+                        <button type="submit" name="submit2" id="submit2" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition_button hover:bg-indigo-700 hover:text-slate-200">Enter</button>
                     </form>
                 </div>
 
@@ -121,8 +119,7 @@ unset($_SESSION['status']);
                             <input type="text" name= "code5" id="code5" maxlength="1" style="animation-delay: 50ms;" class="box_password invalid_box">
                             <input type="text" name= "code6" id="code6" maxlength="1" style="animation-delay: 60ms;" class="box_password invalid_box">
                         </div>
-                        <button type="submit" name="submit2" id="submit2" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition hover:translate-y-1
-                        hover:scale-110 ease-in-out delay-7 hover:bg-indigo-700 hover:text-slate-200">Enter</button>
+                        <button type="submit" name="submit2" id="submit2" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition-button hover:bg-indigo-700 hover:text-slate-200">Enter</button>
                     </form>
                 </div>
             <?php endif; ?>
@@ -161,8 +158,7 @@ unset($_SESSION['status']);
                 <h2 class="text-gray-800 font-bold text-center text-3xl m-10 mt-16 mb-12">Recover Your Password</h2>
                 <h1 class="text-gray-400 text-center text-lg pb-5">Your password has been reset!</h1>
                 <form action="login.php" method="POST" class="flex flex-col items-center sm:mx-auto sm:w-full ">
-                    <button type="submit" id="submit1" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition hover:translate-y-1
-                    hover:scale-110 ease-in-out delay-7 hover:bg-indigo-700 hover:text-slate-200">Login</button>
+                    <button type="submit" id="submit1" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition_button hover:bg-indigo-700 hover:text-slate-200">Login</button>
                 </form>
                 <div id="alert">
                     <div class="alert_positive absolute bottom-20 left-1/3 right-1/3">
@@ -190,14 +186,15 @@ unset($_SESSION['status']);
             document.getElementById('alert').style.display = 'none';
         }
 
-        setTimeout(() => {
+        setTimeout(()=> {
             const alert = document.getElementById('alert');
-            if (alert) alert.classList.add('fade-out');
-        }, 5000);
+            if (alert) alert.classList.add('animate-fade-out');
+        }, 2000);
+
         setTimeout(() => {
             const alert = document.getElementById('alert');
             if (alert) alert.style.display = 'none';
-        }, 7000);
+        }, 4000);
 
         function loading(){
             setTimeout(() => {
