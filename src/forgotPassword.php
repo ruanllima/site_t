@@ -200,7 +200,9 @@ unset($_SESSION['status']);
         }, 7000);
 
         function loading(){
-            document.getElementById('loading').style.display = "";
+            setTimeout(() => {
+                document.getElementById('loading').style.display = ""
+            }, 200);
         }
 
     </script>

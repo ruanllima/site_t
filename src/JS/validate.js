@@ -215,16 +215,15 @@ function validate_form(){
 
     if (validate_to_password && validate_to_match && validate_to_email && validate_to_email2 && validate_to_username) {
         submit.disabled = false;
-        submit.classList.add("bg-indigo-500", "text-gray-100", "transition", "ease-in-out", "delay-75", "hover:-translate-y-1", "hover:scale-110", "hover:bg-indigo-600");
+        submit.classList.add("bg-indigo-500", "text-gray-100", "transition_button", "hover:bg-indigo-600");
         submit.classList.remove("bg-slate-300", "text-gray-400");
         console.log("FALSO");
     } else {
         submit.disabled = true;
         submit.classList.add("bg-slate-300", "text-gray-400");
-        submit.classList.remove("bg-indigo-500", "text-gray-100", "transition", "ease-in-out", "delay-75", "hover:-translate-y-1", "hover:scale-110", "hover:bg-indigo-600");
+        submit.classList.remove("bg-indigo-500", "text-gray-100", "transition_button","hover:bg-indigo-600");
         console.log("VERDADEIRO");
     }
-    
     
 }
 
@@ -264,7 +263,7 @@ function validate_match(){
             match.textContent = "Passwords do not match";
             password2.classList.remove("focus:ring-sky-500");
             password2.classList.remove("focus:ring-green-500");
-            password2.classList.remove("border-slate-500");
+            password2.classList.remove("border-slate-300");
             password2.classList.remove("border-green-500")
             match.classList.remove("text-green-500");
             match.classList.add("text-red-500");
@@ -290,7 +289,7 @@ function validate_match(){
         password2.classList.remove("border-red-500");
         password2.classList.remove("focus:ring-green-500");
         password2.classList.remove("focus:ring-red-500");
-        password2.classList.add("border-slate-500");
+        password2.classList.add("border-slate-300");
         password2.classList.add("focus:ring-sky-500");
         validate = false;
     }
