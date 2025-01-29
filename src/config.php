@@ -38,3 +38,28 @@ function random_code(){
     return strtoupper($string);
 }
 ?>
+
+
+
+$model_email = '<html>
+    <head>
+        <style>
+            body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; }
+            .container { max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+            .code { font-size: 24px; font-weight: bold; color: #0073e6; text-transform: uppercase; }
+            .footer { margin-top: 20px; font-size: 12px; color: #777777; text-align: center; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Recuperação de Senha</h2>
+            <p>Olá,</p>
+            <p>Você solicitou a recuperação de senha. Use o código abaixo para continuar:</p>
+            <p class="code">' . $code . '</p>
+            <p>Se você não solicitou essa recuperação, ignore este e-mail.</p>
+            <div class="footer">
+                <p>&copy; ' . date('Y') . ' Sua Empresa. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </body>
+    </html>';

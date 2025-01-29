@@ -236,13 +236,13 @@ function validate_newPassword(){
 
     if (validate_to_password && validate_to_match) {
         submit.disabled = false;
-        submit.classList.add("bg-indigo-500", "text-gray-100", "transition", "ease-in-out", "delay-75", "hover:-translate-y-1", "hover:scale-110", "hover:bg-indigo-600");
+        submit.classList.add("bg-indigo-500", "text-gray-100", "transition_button", "hover:bg-indigo-600");
         submit.classList.remove("bg-slate-300", "text-gray-400");
         console.log("FALSO");
     } else {
         submit.disabled = true;
         submit.classList.add("bg-slate-300", "text-gray-400");
-        submit.classList.remove("bg-indigo-500", "text-gray-100", "transition", "ease-in-out", "delay-75", "hover:-translate-y-1", "hover:scale-110", "hover:bg-indigo-600");
+        submit.classList.remove("bg-indigo-500", "text-gray-100", "transition_button", "hover:bg-indigo-600");
         console.log("VERDADEIRO");
     }
     
