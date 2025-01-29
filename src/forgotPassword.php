@@ -76,14 +76,14 @@ unset($_SESSION['status']);
                     <h1 class="text-gray-400 text-center text-sm pb-5">Enter the code sent to your email</h1>
                     <form action="recover_password.php" method="POST" class="flex flex-col items-center sm:mx-auto sm:w-full ">
                         <div class="inline-flex">
-                            <input type="text" name= "code1" id="code1" maxlength="1" class="box_password">
-                            <input type="text" name= "code2" id="code2" maxlength="1" class="box_password">
-                            <input type="text" name= "code3" id="code3" maxlength="1" class="box_password">
-                            <input type="text" name= "code4" id="code4" maxlength="1" class="box_password">
-                            <input type="text" name= "code5" id="code5" maxlength="1" class="box_password">
-                            <input type="text" name= "code6" id="code6" maxlength="1" class="box_password">
+                            <input type="text" name= "code1" id="code1" maxlength="1" class="box_code">
+                            <input type="text" name= "code2" id="code2" maxlength="1" class="box_code">
+                            <input type="text" name= "code3" id="code3" maxlength="1" class="box_code">
+                            <input type="text" name= "code4" id="code4" maxlength="1" class="box_code">
+                            <input type="text" name= "code5" id="code5" maxlength="1" class="box_code">
+                            <input type="text" name= "code6" id="code6" maxlength="1" class="box_code">
                         </div>
-                        <button type="submit" name="submit2" id="submit2" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition_button hover:bg-indigo-700 hover:text-slate-200">Enter</button>
+                        <button type="submit" name="submit2" id="submit2" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-8 mb-14 transition_button hover:bg-indigo-700 hover:text-slate-200">Enter</button>
                     </form>
                 </div>
 
@@ -112,14 +112,14 @@ unset($_SESSION['status']);
                     <h1 class="text-gray-400 text-center text-sm pb-5">Enter the code sent to your email</h1>
                     <form action="recover_password.php" method="POST" class="flex flex-col items-center sm:mx-auto sm:w-full ">
                         <div class="inline-flex">
-                            <input type="text" name= "code1" id="code1" maxlength="1" style="animation-delay: 10ms;" class="box_password invalid_box">
-                            <input type="text" name= "code2" id="code2" maxlength="1" style="animation-delay: 20ms;" class="box_password invalid_box ">
-                            <input type="text" name= "code3" id="code3" maxlength="1" style="animation-delay: 30ms;" class="box_password invalid_box">
-                            <input type="text" name= "code4" id="code4" maxlength="1" style="animation-delay: 40ms;" class="box_password invalid_box">
-                            <input type="text" name= "code5" id="code5" maxlength="1" style="animation-delay: 50ms;" class="box_password invalid_box">
-                            <input type="text" name= "code6" id="code6" maxlength="1" style="animation-delay: 60ms;" class="box_password invalid_box">
+                            <input type="text" name= "code1" id="code1" maxlength="1" style="animation-delay: 10ms;" class="invalid_box_code box_code">
+                            <input type="text" name= "code2" id="code2" maxlength="1" style="animation-delay: 20ms;" class="invalid_box_code box_code">
+                            <input type="text" name= "code3" id="code3" maxlength="1" style="animation-delay: 30ms;" class="invalid_box_code box_code">
+                            <input type="text" name= "code4" id="code4" maxlength="1" style="animation-delay: 40ms;" class="invalid_box_code box_code">
+                            <input type="text" name= "code5" id="code5" maxlength="1" style="animation-delay: 50ms;" class="invalid_box_code box_code">
+                            <input type="text" name= "code6" id="code6" maxlength="1" style="animation-delay: 60ms;" class="invalid_box_code box_code">
                         </div>
-                        <button type="submit" name="submit2" id="submit2" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-5 mb-16 transition-button hover:bg-indigo-700 hover:text-slate-200">Enter</button>
+                        <button type="submit" name="submit2" id="submit2" class="bg-indigo-600 rounded-md font-bold text-slate-300 m-2 p-2 w-1/4 mt-8 mb-14 transition-button hover:bg-indigo-700 hover:text-slate-200">Enter</button>
                     </form>
                 </div>
             <?php endif; ?>

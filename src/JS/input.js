@@ -1,5 +1,5 @@
 function input_focus(){
-    const inputs = document.querySelectorAll('input.box_password');
+    const inputs = document.querySelectorAll('input.box_code');
 
     for(let i = 0; i < inputs.length; i++){
         
