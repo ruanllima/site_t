@@ -33,13 +33,26 @@ module.exports = {
       fadeOut: {
         '0%': { opacity: '1' },
         '100%': { opacity: '0' },
-      }
+      },
+      keys_loading: {
+          '0%, 80%, 100%': {
+            opacity: '0.75',
+            boxShadow: '0 0 #076fe5',
+            height: '8rem',
+          },
+          '40%': {
+            opacity: '1',
+            boxShadow: '0 -2rem #076fe5',
+            height: '10rem',
+          },
+        },
       },
       animation: {
         'shake-animation': 'shake 700ms ease-out',
         'bounce-alert': 'bounce_alert 1s ease-in-out',
         'fadeIn': 'fadeIn 1s ease-in-out',
         'fadeOut': 'fadeOut 2s ease-in-out',
+        'keys-loading': 'keys_loading 0.8s infinite ease-in-out'
       }
     },
   },

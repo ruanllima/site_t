@@ -73,8 +73,17 @@
 
 .invalid_box{
     @apply animate-shake bg-white border border-red-500 rounded-md shadow-sm font-light text-slate-700 text-sm
-    placeholder:text-red-400 placeholder:italic focus:ring-1 focus:outline-0 focus:ring-red-500 focus:text-sm shadow-red-400;
+    placeholder:text-red-400 focus:ring-1 focus:outline-0 focus:ring-red-500 focus:text-sm shadow-red-400;
 }
+
+.header_text{
+  @apply text-slate-300 font-medium text-lg;
+}
+
+.header_buttons{
+  @apply bg-slate-200 rounded-tr-3xl rounded-br-sm rounded-tl-sm rounded-bl-3xl p-1 px-4 text-slate-700 font-medium shadow-lg
+}
+
 
 .transition_button{
     @apply transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-105;
@@ -94,6 +103,11 @@
 .cor_red{
     @apply text-2xl text-red-500;
 }
+
+.text_shadow {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* sombra no texto */
+}
+
 
 
 .teste{
