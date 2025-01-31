@@ -81,7 +81,7 @@
 }
 
 .header_buttons{
-  @apply bg-slate-100 rounded-tr-3xl rounded-br-sm rounded-tl-sm rounded-bl-3xl px-4 text-slate-700 font-medium text-base shadow-lg
+  @apply bg-slate-100 rounded-tr-3xl rounded-br-xl rounded-tl-sm rounded-bl-4xl px-4 pl-5 text-slate-700 font-medium text-base shadow-lg
 }
 
 
