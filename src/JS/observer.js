@@ -1,37 +1,48 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
+
+    let lastScrollY = window.scrollY;
+
     const observer_img = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
+            const currentScrollY = window.scrollY;
             if (entry.isIntersecting) {
-                entry.target.classList.remove("animate-fade-out");
-                entry.target.classList.add("animate-fade-in-y");
-                console.log("entrou");
-                console.log(entry.target.classList);
+                if (currentScrollY > lastScrollY) { // Verificando se o scroll está descendo
+                    entry.target.classList.remove("animate-fade-out");
+                    entry.target.classList.add("animate-fade-in-y-down");
+                    console.log("Scroll descendo: entrou");
+                } else { // Se o scroll está subindo
+                    entry.target.classList.remove("animate-fade-out");
+                    entry.target.classList.add("animate-fade-in-y-up");
+                    console.log("Scroll subindo: entrou");
+                }
                 entry.target.classList.remove("opacity-0");
             }
             else{
-                console.log("saiu");
-                console.log(entry.target.classList);
-                entry.target.classList.remove("animate-fade-in-y");
+                entry.target.classList.remove("animate-fade-in-y-down", "animate-fade-in-y-up");
                 entry.target.classList.add("animate-fade-out");
                 entry.target.classList.add("opacity-0");
             }
+            lastScrollY = currentScrollY; // Atualiza a posição do scroll
         });
     }, { threshold: 0.3 });
 
     const observer_img_i = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
+            const currentScrollY = window.scrollY;
             if (entry.isIntersecting) {
-                entry.target.classList.remove("animate-fade-out");
-                entry.target.classList.add("animate-fade-in-y-i");
-                console.log("entrou");
-                console.log(entry.target.classList);
+                if (currentScrollY > lastScrollY) {
+                    entry.target.classList.remove("animate-fade-out");
+                    entry.target.classList.add("animate-fade-in-y-i-down");
+                    console.log("Scroll descendo: entrou");
+                } else {
+                    entry.target.classList.remove("animate-fade-out");
+                    entry.target.classList.add("animate-fade-in-y-i-up");
+                    console.log("Scroll subindo: entrou");
+                }
                 entry.target.classList.remove("opacity-0");
             }
             else{
-                console.log("saiu");
-                console.log(entry.target.classList);
-                entry.target.classList.remove("animate-fade-in-y-i");
+                entry.target.classList.remove("animate-fade-in-y-i-down", "animate-fade-in-y-i-up");
                 entry.target.classList.add("animate-fade-out");
                 entry.target.classList.add("opacity-0");
             }
@@ -44,12 +55,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 entry.target.classList.remove("animate-fade-out");
                 entry.target.classList.add("animate-fade-in-x");
                 console.log("entrou");
-                console.log(entry.target.classList);
                 entry.target.classList.remove("opacity-0");
             }
             else{
                 console.log("saiu");
-                console.log(entry.target.classList);
                 entry.target.classList.remove("animate-fade-in-x");
                 entry.target.classList.add("animate-fade-out");
                 entry.target.classList.add("opacity-0");
@@ -63,12 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 entry.target.classList.remove("animate-fade-out");
                 entry.target.classList.add("animate-fade-in-x-i");
                 console.log("entrou");
-                console.log(entry.target.classList);
                 entry.target.classList.remove("opacity-0");
             }
             else{
                 console.log("saiu");
-                console.log(entry.target.classList);
                 entry.target.classList.remove("animate-fade-in-x-i");
                 entry.target.classList.add("animate-fade-out");
                 entry.target.classList.add("opacity-0");
@@ -82,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 entry.target.classList.remove("animate-fade-out");
                 entry.target.classList.add("animate-fade-in-x-i");
                 console.log("entrou");
-                console.log(entry.target.classList);
                 entry.target.classList.remove("opacity-0");
             }
             
