@@ -27,19 +27,19 @@
             <h1 class="absolute left-52 top-96 font-bold text-[#ffbf00]">world.</h1>
         </div>
     </section>
-    <section class="h-[400vh] relative bg-slate-100">
+    <section id="scrollContainer" class="h-[500vh] relative bg-slate-100">
         <div class="flex place-content-center">
             <div class="flex flex-col text-center">
-                <h1 class=" text-3xl font-bold text-slate-900 mt-32">Olá! Meu nome é... </h1>
-                <h1 class="mt-4 text-indigo-700 text-7xl font-extrabold">RUAN LIMA</h1>
+                <h1 id="intro1" class=" text-3xl font-bold text-slate-900 mt-32">Olá! Meu nome é... </h1>
+                <h1 id="intro2" class="mt-4 text-indigo-700 text-7xl font-extrabold opacity-0">RUAN LIMA</h1>
                 <h2 class="text-slate-400 text-xl font-light mt-6">Algumas coisas que você precisa saber sobre mim:</h2>
             </div>
         </div>
         
-        <div class="mt-20 px-8 md:px-16 lg:px-32 xl:px-40">
+        <div class="mt-32 px-8 md:px-16 lg:px-32 xl:px-20">
             <div class="inline-flex gap-10">
-                <img src="/src/media/IMG1.jpg" alt="Campus Party Nordeste 2024" class="h-[30rem] rounded-4xl max-w-[60rem]">
-                <div class="mt-10">
+                <img id="img" src="/src/media/IMG1.jpg" alt="Campus Party Nordeste 2024" class="h-[30rem] rounded-4xl max-w-[60rem] opacity-0">
+                <div id="txt" class="mt-10 opacity-0">
                     <h1 class="text-indigo-600 font-semibold text-xl ">Quem eu sou</h1>
                     <hr class="text-slate-300 mt-1">
                     <p class="font-light text-slate-500 text-lg mt-2">Sou um jovem de 18 anos, residente no estado de Alagoas, Brasil, apaixonado por música, tecnologia e inovação. Tenho grande curiosidade pelo mundo e busco constantemente aprender e explorar novas áreas do conhecimento. Frequentei a maior parte da minha vida escolar em instituições públicas, mas isso não foi um impedimento para me destacar nas ciências exatas ou tecnológicas. Mesmo após terminar o ensino médio, continuo focado em adquirir novos conhecimentos e me aprimorar ainda mais nessa nova área da minha vida.
@@ -48,7 +48,7 @@
             </div>
 
             <div class="inline-flex gap-10 mt-20">
-                <div class="mt-6">
+                <div id="txt-i" class="mt-6 opacity-0">
                     <h1 class="text-indigo-600 font-semibold text-xl">Experiência com Tecnologia e Empreendedorismo</h1>
                     <hr class="text-slate-300 mt-1">
                     <p class="font-light text-slate-500 text-lg mt-2">Sou entusiasta da tecnologia e da inovação, com um interesse especial por programação e empreendedorismo. Participei de diversas maratonas de inovação, hackathons e eventos voltados para tecnologia e inteligência artificial, como a <span class="text-[#FF6D00] font-semibold text-base">Campus Party Nordeste 2024</span> e o <span class="text-[#FF6D00] font-semibold text-base">Trakto Show 2024</span>. Meu envolvimento com o ecossistema de startups me proporcionou habilidades essenciais de comunicação e oratória, como a prática do "Pitch", além de expandir minha visão sobre diferentes áreas.
@@ -56,12 +56,12 @@
                     <p class="font-light text-slate-500 text-lg">Além disso, tive a oportunidade de competir em desafios de empreendedorismo, como o <span class="text-[#FF6D00] font-semibold text-base">Desafio Liga Jovem</span>, onde tive a experiência de desenvolver um jogo do zero, ao lado colegas da minha escola. Embora não me considere um desenvolvedor de jogos, essa vivência me permitiu explorar novas ferramentas como a Unity e a linguagem C#, agregando novos conhecimentos ao meu repertório técnico.
                     </p>
                 </div>
-                
-                <img src="/src/media/IMG2.jpg" alt="Trakto Show 2024" class="h-[30rem] rounded-4xl">
+                <img id="img-i" src="/src/media/IMG2.jpg" alt="Trakto Show 2024" class="h-[30rem] rounded-4xl opacity-0">
             </div>
+
             <div class="inline-flex gap-10 mt-20">
-                <img src="/src/media/IMG3.jpg" alt="Novo Ensino Suplementar" class="h-[28rem] rounded-4xl">
-                <div class="mt-6">
+                <img id="img" src="/src/media/IMG3.jpg" alt="Novo Ensino Suplementar" class="h-[28rem] rounded-4xl opacity-0">
+                <div id="txt" class="mt-6 opacity-0">
                     <h1 class="text-indigo-600 font-semibold text-xl">Formação Acadêmica e Olimpíadas</h1>
                     <hr class="text-slate-300 mt-1">
                     <p class="font-light text-slate-500 text-lg mt-2">Durante minha trajetória escolar, participei e fui premiado em diversas olimpíadas de conhecimento, como a OBMEP, Mandacaru de Matemática, OCE, entre outras. Essas competições foram fundamentais para consolidar minha base matemática e lógica, essenciais para minha evolução na programação.
@@ -72,7 +72,7 @@
             </div>
             
             <div class="inline-flex gap-10 mt-20">
-                <div class="mt-6">
+                <div id="txt-i" class="mt-6 opacity-0">
                     <h1 class="text-indigo-600 font-semibold text-xl">Habilidades Técnicas e Objetivos</h1>
                     <hr class="text-slate-300 mt-1">
                     <p class="font-light text-slate-500 text-lg mt-2">Atualmente, me considero um aspirante à programação. Não sou um especialista, mas tenho determinação e vontade de melhorar a cada dia, aprendendo com meus erros e acertos. Busco sempre explorar novas ferramentas e me aprofundar nos temas que mais despertam meu interesse.
@@ -82,7 +82,7 @@
                     <p class="font-light text-slate-500 text-lg">Meu objetivo é continuar crescendo na área de tecnologia, ingressar no mercado de trabalho e aproveitar as oportunidades para expandir meus conhecimentos. Estou sempre aberto a desafios que me permitam evoluir e desenvolver novas habilidades.
                     </p>
                 </div>
-                <img src="/src/media/IMG4.jpg" alt="Giulia Bordignon" class="h-[29rem] rounded-4xl">
+                <img id="img-i" src="/src/media/IMG4.jpg" alt="Giulia Bordignon" class="h-[29rem] rounded-4xl opacity-0">
             </div>
             
         </div>
@@ -90,8 +90,10 @@
     </section>
     
     
-    
-    
+    <script src="/src/JS/observer.js"></script>
+    <script>
+        
+    </script>
     
     
 </body>
