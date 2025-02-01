@@ -142,7 +142,42 @@
       }
     }
 
+    
 }
+
+@keyframes typewriter {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 612px;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-right-color: transparent;
+    ;
+  }
+
+  100% {
+    border-right-color: transparent;
+  }}
+
+.write {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 612px;
+  animation: typewriter 2.7s steps(48) alternate , blink 0.5s steps(48);
+}
+
+.parallax {
+  transform: translateY(0);
+  transition: transform 9ms linear;
+}
+
 
 
 .box_code{

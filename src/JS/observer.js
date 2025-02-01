@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 entry.target.classList.add("opacity-0");
             }
         });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.4 });
 
     const observer_txt_i = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 entry.target.classList.add("opacity-0");
             }
         });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.4 });
 
     const observer_intro1 = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -100,9 +100,21 @@ document.addEventListener("DOMContentLoaded", function () {
             if (entry.isIntersecting) {
                 setTimeout(() => {
                     entry.target.classList.remove("animate-fade-out");
-                    entry.target.classList.add("animate-fade-in-scale");
+                    entry.target.classList.add("animate-fade-in-x");
                     entry.target.classList.remove("opacity-0");
                 }, 1000)
+            
+            }
+        });
+    }, { threshold: 0.2 });
+
+    const observer_intro3 = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add("write");
+                    entry.target.classList.remove("opacity-0");
+                }, 2000)
             
             }
         });
@@ -114,5 +126,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('[id="txt-i"]').forEach(el => observer_txt_i.observe(el));
     document.querySelectorAll('[id="intro1"]').forEach(el => observer_intro1.observe(el));
     document.querySelectorAll('[id="intro2"]').forEach(el => observer_intro2.observe(el));
+    document.querySelectorAll('[id="intro3"]').forEach(el => observer_intro3.observe(el));
     
 });

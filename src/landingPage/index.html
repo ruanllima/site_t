@@ -8,9 +8,8 @@
 </head>
 <body class="">
     <section class="h-[110vh] relative bg-gradient-to-bl from-[#3505e3] to-[#6800fa]">
-        <img src="/src//media/BACK.jpg" alt="" class="absolute bottom-0 h-full w-screen opacity-20">
+        <img src="/src//media/BACK.jpg" alt="" class="absolute bottom-0 h-full w-screen opacity-24 parallax">
         <div class="pt-4">
-            <img class="h-9 absolute left-6" src="/src/media/ronin-ron-logo.png" alt="Ruan">
             <div class="inline-flex gap-4 absolute right-7 items-center">
                 <a href="" class="header_text text_shadow">Sobre Mim</a>
                 <a href="" class="header_text text_shadow">Git Hub</a>
@@ -22,7 +21,7 @@
         </div>
         </div>
         <div class="">
-            <img src="/src/media/img_perfil.png" alt="" class="h-[680px] absolute -bottom-16 right-14">
+            <img src="/src/media/img_perfil.png" alt="Ruan Lima" class="h-[680px] absolute -bottom-16 right-14">
         </div>
         
         <div class="text-8xl text_shadow">
@@ -38,15 +37,16 @@
             <div class="flex flex-col text-center">
                 <h1 id="intro1" class=" text-3xl font-bold text-slate-900 mt-32">Olá! Meu nome é... </h1>
                 <h1 id="intro2" class="mt-4 text-indigo-700 text-7xl font-extrabold opacity-0">RUAN LIMA</h1>
-                <h2 class="text-slate-400 text-xl font-light mt-6">Algumas coisas que você precisa saber sobre mim:</h2>
+                <h2 id="intro3" class="text-slate-400 text-xl font-light mt-6 w-128 opacity-0">Algumas coisas que você precisa saber sobre mim:</h2>
+            
             </div>
         </div>
         
-        <div class="mt-32 px-8 md:px-16 lg:px-32 xl:px-28">
+        <div class="mt-40 px-8 md:px-16 lg:px-32 xl:px-28">
             <div class="inline-flex gap-10">
                 <img id="img" src="/src/media/IMG1.jpg" alt="Campus Party Nordeste 2024" class="h-[30rem] rounded-4xl max-w-[60rem] opacity-0">
                 <div id="txt" class="mt-10 opacity-0">
-                    <h1 class="text-indigo-600 font-semibold text-xl ">Quem eu sou</h1>
+                    <h1 class="text-indigo-600 font-semibold text-xl ">Quem sou eu</h1>
                     <hr class="text-slate-300 mt-1">
                     <p class="font-light text-slate-500 text-lg mt-2">Sou um jovem de 18 anos, residente no estado de Alagoas, Brasil, apaixonado por música, tecnologia e inovação. Tenho grande curiosidade pelo mundo e busco constantemente aprender e explorar novas áreas do conhecimento. Frequentei a maior parte da minha vida escolar em instituições públicas, mas isso não foi um impedimento para me destacar nas ciências exatas ou tecnológicas. Mesmo após terminar o ensino médio, continuo focado em adquirir novos conhecimentos e me aprimorar ainda mais nessa nova área da minha vida.
                     </p>
@@ -98,7 +98,10 @@
     
     <script src="/src/JS/observer.js"></script>
     <script>
-        
+        document.addEventListener("scroll", function () {
+        let scrollPosition = window.scrollY;
+        document.querySelector(".parallax").style.transform = `translateY(${scrollPosition * 0.3}px)`;
+    });
     </script>
     
     
