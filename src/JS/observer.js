@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 setTimeout(() => {
                     entry.target.classList.add("write");
                     entry.target.classList.remove("opacity-0");
-                }, 2000)
+                }, 1700)
             
             }
         });
