@@ -175,7 +175,6 @@
 
 .parallax {
   transform: translateY(0);
-  transition: transform 9ms linear;
 }
 
 

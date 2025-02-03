@@ -12,8 +12,8 @@
     }
 </style>
 <body class="">
-    <section class="h-[110vh] relative bg-gradient-to-bl from-[#3505e3] to-[#6800fa]">
-        <img src="/src//media/BACK.jpg" alt="" class="fixed h-full min-h-screen w-screen opacity-24">
+    <section class="h-[103vh] relative bg-gradient-to-bl from-[#3505e3] to-[#6800fa]">
+        <img src="/src//media/BACK.jpg" alt="" class="absolute bottom-0 h-full min-h-screen w-screen opacity-24 parallax">
         <div class="pt-4">
             <div class="inline-flex gap-4 absolute right-7 items-center">
                 <a href="" class="header_text text_shadow">Sobre Mim</a>
@@ -206,7 +206,10 @@
     <script src="/src/JS/observer.js"></script>
     <script src="/src/JS/view.js"></script>
     <script>
-        
+        document.addEventListener("scroll", function () {
+        let scrollPosition = window.scrollY;
+        document.querySelector(".parallax").style.transform = `translateY(${scrollPosition * 0.4}px)`;
+    });
     </script>
     
     
