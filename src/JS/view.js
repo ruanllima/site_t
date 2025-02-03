@@ -9,7 +9,6 @@ function view(id){
         document.getElementById(id).style.display = "block";
         element.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Rola até o elemento e o alinha no topo
         document.body.style.overflow = 'hidden';
-        
-        
+      
     }
 }

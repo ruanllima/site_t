@@ -13,7 +13,7 @@
 </style>
 <body class="">
     <section class="h-[110vh] relative bg-gradient-to-bl from-[#3505e3] to-[#6800fa]">
-        <img src="/src//media/BACK.jpg" alt="" class="absolute bottom-0 h-full w-screen opacity-24 parallax">
+        <img src="/src//media/BACK.jpg" alt="" class="fixed h-full min-h-screen w-screen opacity-24">
         <div class="pt-4">
             <div class="inline-flex gap-4 absolute right-7 items-center">
                 <a href="" class="header_text text_shadow">Sobre Mim</a>
@@ -107,7 +107,7 @@
         </div>
 
         <div class="mt-56 px-8 md:px-16 lg:px-32 xl:px-24">
-
+            <!--Cursos-->
             <div class="flex flex-wrap gap-4 justify-center">
                 <div class="bg-white rounded-md rounded-br-sm rounded-tl-3xl w-[32rem] h-[10rem] px-4 grid grid-cols-3 items-center mx-[1px]">
                     <div class="col-span-2">
@@ -138,8 +138,7 @@
             <div class="flex items-center place-content-center">
                 <hr class="text-transparent w-[66rem] mt-2 mb-2">
             </div>
-            
-
+        
             <div class="flex flex-wrap gap-4 justify-center">
                 <div class="bg-white rounded-md rounded-bl-3xl rounded-tr-sm w-[32rem] h-[10rem] px-4 grid grid-cols-3 items-center mx-[1px]">
                     <div class="col-span-2">
@@ -163,6 +162,8 @@
                     </div>
                     <button type="button" style="cursor: pointer;" onclick="view('certificado_SQL2')" class="bg-indigo-600 text-slate-100 font-semibold whitespace-nowrap text-md rounded-md h-8 w-auto mr-5">Ver certificado</button>
                 </div>
+
+                <!-- Certificados ocultos -->
                 <div style="display: none;" id="certificado_nes">
                     <div class="fixed inset-0 bg-black/70 flex items-center justify-center backdrop-blur-xs"></div>
                     <div class="absolute top-16 left-72">
@@ -191,7 +192,7 @@
                         <button style="cursor: pointer;" onclick="view('certificado_python')" class="absolute -top-4 -right-24 transition_button "><img src="/src/media/button_sair.png" alt="" class="h-12"></button>
                     </div>
                 </div>
-        
+                
             </div>
 
             
@@ -205,10 +206,7 @@
     <script src="/src/JS/observer.js"></script>
     <script src="/src/JS/view.js"></script>
     <script>
-        document.addEventListener("scroll", function () {
-        let scrollPosition = window.scrollY;
-        document.querySelector(".parallax").style.transform = `translateY(${scrollPosition * 0.3}px)`;
-    });
+        
     </script>
     
     
